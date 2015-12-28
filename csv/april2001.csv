@@ -1,0 +1,46 @@
+country,country_code,year,month,local_price,dollar_ex,dollar_price,dollar_ppp,dollar_valuation
+Argentina,ARG,2001,4,2.50,1.00,2.50,0.98,-1.57
+Australia,AUS,2001,4,3.00,1.98,1.52,1.18,-40.35
+Brazil,BRA,2001,4,3.60,2.19,1.64,1.42,-35.28
+Britain,GBR,2001,4,1.99,0.70,2.85,0.78,12.04
+Canada,CAN,2001,4,3.33,1.56,2.14,1.31,-15.96
+Chile,CHL,2001,4,1260.00,601.00,2.10,496.06,-17.46
+China,CHN,2001,4,9.90,8.28,1.20,3.90,-52.93
+Colombia,COL,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Costa Rica,CRI,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Czech Republic,CZE,2001,4,56.00,39.00,1.43,22.05,-43.47
+Denmark,DNK,2001,4,24.75,8.46,2.93,9.74,15.18
+Egypt,EGY,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Euro area,,2001,4,2.57,1.14,2.27,1.01,-10.96
+Hong Kong,HKG,2001,4,10.70,7.80,1.37,4.21,-45.99
+Hungary,HUN,2001,4,399.00,303.00,1.32,157.09,-48.16
+India,IND,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Indonesia,IDN,2001,4,14700.00,10855.00,1.35,5787.40,-46.68
+Israel,ISR,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Japan,JPN,2001,4,294.00,124.00,2.38,115.75,-6.65
+Latvia,LVA,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Lithuania,LTU,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Malaysia,MYS,2001,4,4.52,3.80,1.19,1.78,-53.17
+Mexico,MEX,2001,4,21.90,9.29,2.36,8.62,-7.19
+New Zealand,NZL,2001,4,3.60,2.47,1.46,1.42,-42.62
+Norway,NOR,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Pakistan,PAK,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Peru,PER,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Philippines,PHL,2001,4,59.00,50.30,1.17,23.23,-53.82
+Poland,POL,2001,4,5.90,4.03,1.46,2.32,-42.36
+Russia,RUS,2001,4,35.00,28.90,1.21,13.78,-52.32
+Saudi Arabia,SAU,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Singapore,SGP,2001,4,3.30,1.81,1.82,1.30,-28.22
+South Africa,ZAF,2001,4,9.70,8.13,1.19,3.82,-53.03
+South Korea,KOR,2001,4,3000.00,1325.00,2.27,1181.10,-10.86
+Sri Lanka,LKA,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Sweden,SWE,2001,4,24.00,10.28,2.33,9.45,-8.09
+Switzerland,CHE,2001,4,6.30,1.73,3.65,2.48,43.37
+Taiwan,TWN,2001,4,70.00,32.90,2.13,27.56,-16.23
+Thailand,THA,2001,4,55.00,45.50,1.21,21.65,-52.41
+Turkey,TUR,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+UAE,ARE,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Ukraine,UKR,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+United States,USA,2001,4,2.54,1.00,2.54,1.00,0.00
+Uruguay,URY,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
+Venezuela,VEN,2001,4,#N/A,#N/A,#N/A,#N/A,#N/A
