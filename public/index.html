@@ -57,8 +57,9 @@
     <div id="worldmap">
 
       <div class="col-md-3" id="key">
-        <div id="dropdown">
+        <div class="instruction" id="dropdown">
           <h3>Pick a Year</h3>
+          <hr>
 
           <select name="dropdown">
             <option value="Now">Now</option>
@@ -79,31 +80,49 @@
             <option value="2001">2001</option>
             <option value="2000">2000</option>
           </select>
-          <button id="go" class="btn-warning">Go</button>
+          <br><br>
             <p>Change the colors of the map to indicate changes in prices from year to year.</p>
         </div>
 
-
+      <div class="instruction">
         <h3> Current Prices </h3>
+        <hr>
         <p>
           Select "now" as the year and hover over any colored country for up to the hour exchange rate information and Big Mac dollar values for each country.
         </p>
+</div>
+
+  <div class="instruction">
         <h3>Historical Prices </h3>
+        <hr>
         <p>
-          Click any colored country for more information about historical Big Mac Prices from the last 15 years.
+          Click any colored country for more information about historical Big Mac Prices from the last 15 years. Drag to compare multiple countries side by side.
         </p>
-        <h3>Price Differences </h3><button type="button" name="button">Launch</button>
 
+</div>
+
+<div class="instruction">
+
+        <h3> Price Differences </h3>
+        <hr>
+        <button type="button" name="button" id="pricegraph">Generate</button>
         <p>
+          Graphical representation of the price of a Big Mac in the US in the selected year minus the cost of the Big Mac converted to USD in another country.
+        </p>
+
+
+        <!-- <p>
           Finds the difference between the US Dollar Big Mac cost and the converted Big Mac cost from another country.
-        </p>
-
+        </p> -->
+</div>
 
 
       </div>
 
       <div class="col-md-7" id="mapcontainer">
+
       </div>
+<div class="overlay"> </div>
 
 
 

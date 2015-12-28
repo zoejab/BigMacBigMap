@@ -1,5 +1,5 @@
 var renderMain = function(data) {
-	var tooltip = d3.select("#mainchart")
+	var tooltip = d3.select("#mapcontainer")
 		.append("div")
 		.attr('class', 'line-tooltip');
 
@@ -9,12 +9,11 @@ var renderMain = function(data) {
 			bottom: 5,
 			left: 5
 		},
-		width = 300 - margin.left - margin.right,
+		width = 400 - margin.left - margin.right,
 		height = 630 - margin.top - margin.bottom;
 
 	// var x0 = Math.max(-d3.min(data), d3.max(data));
 	// var x1 = Math.max(d3.max(data));
-
 
 
 	var x0 = 36;
@@ -43,7 +42,7 @@ var renderMain = function(data) {
 		return d.Country;
 	}));
 
-	var svg = d3.select("#mainchart").append("svg")
+	var svg = d3.select(".overlay").append("svg")
 		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
 		.append("g");
@@ -63,7 +62,11 @@ var renderMain = function(data) {
 			return y(d.Country);
 		})
 		.attr("width", function(d, i) {
-			return Math.abs(x(parseFloat(usa.dollar_price)) - x(parseFloat(d.dollar_price)));
+			if ( (parseFloat(usa.dollar_price) - parseFloat(d.dollar_price)) === parseFloat(usa.dollar_price)){
+				return 0;
+			} else {
+				return (Math.abs(x(parseFloat(usa.dollar_price)) - x(parseFloat(d.dollar_price))));
+			}
 		})
 		.attr("height", y.rangeBand());
 

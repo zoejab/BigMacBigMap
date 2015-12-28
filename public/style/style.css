@@ -29,6 +29,7 @@ h1 {
 
 h3 {
   font-size: 22px;
+   font-family: 'Arvo', Helvetica, sans-serif;
 }
 
 #rightpanel p{
@@ -91,6 +92,19 @@ button {
    z-index: 50;
  }
 
+.instruction {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: -25px;
+}
+
+
+hr {
+  border-top: #FDC82F 2px solid;
+  position: relative;
+  top: -12px;
+}
+
  #key {
    background:  #BA2126;
    height: 100%;
@@ -99,13 +113,32 @@ button {
 
  #key h3 {
    color: black;
+   position: relative;
+   font-size: 24px;
  }
 
  #key p {
    background: white;
    padding: 10px;
    border-radius: 10px;
+   position: relative;
+   top: -25px;
+   font-size: 12px;
  }
+
+  #key select {
+    position: relative;
+    top: -20px;
+  }
+
+  #key button {
+    position: relative;
+    top: -29px;
+    fill: grey;
+    font-size: 11px;
+    bottom: 5px;
+  }
+
 
 
  .countryGraph {
@@ -155,4 +188,57 @@ button {
    stroke: #006300;
    stroke-width: 2;
    fill: none;
+ }
+
+
+ .graph-box {
+   background: white;
+   width: 100px;
+   height: 100px;
+ }
+
+
+  /*for price diff graph*/
+  .overlay {
+    position: absolute;
+    left: 45%;
+    /*width: 500px;*/
+  }
+ .overlay svg {
+   padding-left: 20px;
+   padding-right: 2px;
+   width: 500px;
+   /*position: absolute;*/
+   /*left: 45%;*/
+   background: white;
+   box-sizing: border-box;
+   border: 5px #D52B1E solid;
+   border-radius: 10px;
+ }
+
+ .bar.positive {
+   fill: steelblue;
+ }
+ .bar.negative {
+   fill: #D52B1E;
+ }
+ .axis text {
+   font: 10px sans-serif;
+   color: black;
+ }
+ .graph-box {
+   background: white;
+   width: 100px;
+   height: 100px;
+ }
+ .country {
+   /*fill: none;*/
+   fill: #CCCCCC;
+   stroke: black;
+   stroke-width: .7px;
+ }
+ .main-text {
+   font-family: sans-serif;
+   font-size: 9px;
+   fill: black;
  }

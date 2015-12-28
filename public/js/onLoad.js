@@ -207,9 +207,9 @@ $(document).ready(function() {
 									// if (currencyNames[country.country_code] === country.countryCode
 								});
 								if ($('#dropdown :selected').text() != "Now") {
-										return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price: $</strong>" + dollarPrice;
+										return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price:</strong> $" + dollarPrice;
 								} else {
-								return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price: $</strong>" + (localPrice / exchangeRate).toFixed(2) + " <br><strong> Current Exchange Rate:</strong> " + exchangeRate + " to 1 USD"; }
+								return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price: </strong> $" + (localPrice / exchangeRate).toFixed(2) + " <br><strong> Current Exchange Rate:</strong> " + exchangeRate + " to 1 USD"; }
 							});
 					}
 				});
@@ -232,19 +232,9 @@ $(document).ready(function() {
 
 	}
 
-	var mainGraph = function() {
-		var year = $('#dropdown :selected').text();
-		console.log(year);
-		if (year === "Now") {year = 2015;}
-		console.log(year);
-		$.ajax({
-			url: "/" + year,
-			method: "GET",
-			dataType: "json"
-		}).done(renderMain);
-	};
 
-	mainGraph();
+
+	// mainGraph();
 
 	var showGraphContainer = function(d, i) {
 		var mouse = d3.mouse(svg.node()).map(function(d) {
@@ -259,8 +249,7 @@ $(document).ready(function() {
 
 	};
 
-	$('#go').on('click', function() {
-		console.log('click');
+	$('select').on('change', function() {
 		arrayChoropleth = [];
 		populateArray();
 		throttle();
@@ -268,6 +257,29 @@ $(document).ready(function() {
 
 	$('#scrolldown').on('click', function(){
 		$(window).scrollTop($('#worldmap').offset().top);
+	});
+
+	$('#pricegraph').on('click', function(){
+		$('.overlay').empty();
+		var mainGraph = function() {
+			var year = $('#dropdown :selected').text();
+			console.log(year);
+			if (year === "Now") {year = 2015;}
+			console.log(year);
+			$.ajax({
+				url: "/" + year,
+				method: "GET",
+				dataType: "json"
+			}).done(renderMain);
+		};
+		mainGraph();
+		$('.overlay').css('display', 'inline-block');
+
+		$('#mapcontainer').css('opacity', 0.2);
+		$('#mapcontainer').on('click', function(){
+			$('.overlay').empty();
+			$('#mapcontainer').css('opacity', 1);
+		});
 	});
 
 

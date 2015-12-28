@@ -87,7 +87,7 @@ var renderLineChart = function(data) {
 		.attr("x", (width / 2))
 		.attr("y", 0 - (margin.top / 5))
 		.attr("text-anchor", "middle")
-		.style("font-size", "20px")
+		.style("font-size", "14px")
 		// .style("text-decoration", "underline")
 		.text(data[0].Country + ": Historical Local Prices");
 
