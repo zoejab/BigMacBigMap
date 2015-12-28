@@ -1,5 +1,5 @@
  html, body {
-  width: 100%;
+   width: 100%;
    margin: 0;
    background: black;
 
@@ -44,14 +44,19 @@ h3 {
   position: relative;
   top: 370px;
   right: 43%;
+  fill: black;
+}
 
+#scrolldown svg:hover {
+  cursor: pointer;
 }
 
 button {
   position: relative;
-  top: 100px;
-  right: 100px;
+  /*top: 100px;
+  right: 100px;*/
 }
+
  img {
    height: 300px;
  }
@@ -60,6 +65,7 @@ button {
  }
  #worldmap {
    height: 100vh;
+   /*float: right;*/
    /*background: #BA2126;*/
  }
  .country {
@@ -67,10 +73,12 @@ button {
    stroke: black;
    stroke-width: .7px;
  }
+
  .country:hover {
    stroke: #fff;
    stroke-width: .7px;
  }
+
  div.tooltip {
    color: #222;
    background: #fff;
@@ -81,4 +89,70 @@ button {
    opacity: 0.9;
    position: absolute;
    z-index: 50;
+ }
+
+ #key {
+   background:  #BA2126;
+   height: 100%;
+   opacity: .9;
+ }
+
+ #key h3 {
+   color: black;
+ }
+
+ #key p {
+   background: white;
+   padding: 10px;
+   border-radius: 10px;
+ }
+
+
+ .countryGraph {
+   background: white;
+   float: left;
+   z-index: 40;
+ }
+ .draggable {
+   width: 530px;
+   height: 220px;
+   background: white;
+   box-sizing: border-box;
+   border-radius: 15px;
+   border: 4px solid #D52B1E;
+   margin: 10px;
+   top: -300px;
+   /*z-index: 100;*/
+ }
+
+ .line-tooltip {
+   position: absolute;
+   background: white;
+   padding: 7px;
+   z-index: 10;
+   visibility: hidden;
+   box-sizing: border-box;
+   border: black solid 1px;
+ }
+
+ .chart-container {
+   position: relative;
+ }
+ .axis {
+   font: 10px sans-serif;
+ }
+ .axis path, .axis line {
+   fill: none;
+   stroke: #000;
+   stroke-width: 1;
+   shape-rendering: crispEdges;
+ }
+ .x.axis path {
+   display: none;
+ }
+
+ .line {
+   stroke: #006300;
+   stroke-width: 2;
+   fill: none;
  }

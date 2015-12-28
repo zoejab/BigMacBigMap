@@ -12,8 +12,8 @@ $(document).ready(function() {
 		.scaleExtent([1, 5])
 		.on("zoom", move);
 
-	var width = document.getElementById('container').offsetWidth - 30;
-	var height = width / 2;
+	var width = document.getElementById('mapcontainer').offsetWidth + 200;
+	var height = width / 1.5;
 	var topo, projection, path, svg, g;
 	var tooltip = d3.select("#container").append("div").attr("class", "tooltip hidden");
 
@@ -21,18 +21,18 @@ $(document).ready(function() {
 
 	function setup(width, height) {
 		projection = d3.geo.mercator()
-			.translate([0, 50])
-			.scale(width / 2.3 / Math.PI); //the width / # determines how zoomed in it is
+			.translate([0, 80])
+			.scale(width / 1.75 / Math.PI); //the width / # determines how zoomed in it is
 
 		path = d3.geo.path()
 			.projection(projection);
 
-		svg = d3.select("#worldmap").append("svg")
+		svg = d3.select("#mapcontainer").append("svg")
 			.attr('class', 'map')
 			.attr("width", width)
 			.attr("height", height)
 			.append("g")
-			.attr("transform", "translate(" + width / 2.85 + "," + height / 1.7 + ")") //the number you divide by width changes how the map is translated in the window
+			.attr("transform", "translate(" + width / 2.3 + "," + height / 2.2 + ")") //the number you divide by width changes how the map is translated in the window
 			.call(zoom);
 
 		g = svg.append("g");
@@ -49,6 +49,7 @@ $(document).ready(function() {
 	function populateArray() {
 		console.log('populateArray');
 		var year = $('#dropdown :selected').text();
+		if (year === "Now") {year = 2015;}
 		console.log(year);
 		$.ajax({
 			url: "/" + year,
@@ -179,22 +180,23 @@ $(document).ready(function() {
 				var mouse = d3.mouse(svg.node()).map(function(d) {
 					return parseInt(d);
 				});
-				console.log(country);
 				array2015.forEach(function(country) {
 					if(d.properties.color === undefined) {
 
 						tooltip
 							.classed("hidden", false)
-							.attr("style", "left:" + (mouse[0] + offsetL) + "px;top:" + (mouse[1] + offsetT) + "px")
+							.attr("style", "left:" + (mouse[0] + offsetL + 400) + "px;top:" + (mouse[1] + offsetT) + "px")
 							.html(d.properties.name);
 
 					} else {
 						tooltip
 							.classed("hidden", false)
-							.attr("style", "left:" + (mouse[0] + offsetL) + "px;top:" + (mouse[1] + offsetT) + "px")
+							.attr("style", "left:" + (mouse[0] + offsetL + 200) + "px;top:" + (mouse[1] + offsetT) + "px")
 							.html(function() {
+
+								// console.log(arrayChoropleth);
 								var localPrice, dollarPrice, exchangeRate, currencyName;
-								array2015.forEach(function(country) {
+								arrayChoropleth.forEach(function(country) {
 									if(country.Country === d.properties.name) {
 										localPrice = parseFloat(country.local_price).toFixed(2);
 										dollarPrice = parseFloat(country.dollar_price).toFixed(2);
@@ -204,8 +206,10 @@ $(document).ready(function() {
 									}
 									// if (currencyNames[country.country_code] === country.countryCode
 								});
-
-								return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price: $</strong>" + (localPrice / exchangeRate).toFixed(2) + " <br><strong> Current Exchange Rate:</strong> " + exchangeRate + " to 1 USD";
+								if ($('#dropdown :selected').text() != "Now") {
+										return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price: $</strong>" + dollarPrice;
+								} else {
+								return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price: $</strong>" + (localPrice / exchangeRate).toFixed(2) + " <br><strong> Current Exchange Rate:</strong> " + exchangeRate + " to 1 USD"; }
 							});
 					}
 				});
@@ -231,6 +235,8 @@ $(document).ready(function() {
 	var mainGraph = function() {
 		var year = $('#dropdown :selected').text();
 		console.log(year);
+		if (year === "Now") {year = 2015;}
+		console.log(year);
 		$.ajax({
 			url: "/" + year,
 			method: "GET",
@@ -255,6 +261,7 @@ $(document).ready(function() {
 
 	$('#go').on('click', function() {
 		console.log('click');
+		arrayChoropleth = [];
 		populateArray();
 		throttle();
 	});

@@ -33,7 +33,7 @@ var renderLineChart = function(data) {
 			return y(parseFloat(d.local_price).toFixed(2));
 		});
 
-	var svg = d3.select("#container")
+	var svg = d3.select("#mapcontainer")
 		.append("svg")
 		.attr('id', 'draggable')
 		.attr('class', 'draggable ui-widget-content')
