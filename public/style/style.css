@@ -35,6 +35,7 @@ h3 {
 #rightpanel p{
   font-family: Helvetica;
   background: white;
+  width: 100%;
   padding: 10px;
   border: #BA2126 solid 5px;
   border-radius: 15px;
@@ -42,10 +43,16 @@ h3 {
 }
 
 #scrolldown svg {
-  position: relative;
-  top: 370px;
-  right: 43%;
+  /*position: relative;*/
+  /*top: 40%;*/
+  /*right: 43%;*/
   fill: black;
+}
+#scrolldown {
+  float: left;
+  position: relative;
+  top: 60%;
+  left: -45%;
 }
 
 #scrolldown svg:hover {
@@ -147,6 +154,7 @@ hr {
    z-index: 40;
  }
  .draggable {
+   position: absolute;
    width: 530px;
    height: 220px;
    background: white;
@@ -154,7 +162,8 @@ hr {
    border-radius: 15px;
    border: 4px solid #D52B1E;
    margin: 10px;
-   top: -300px;
+   top: 50%;
+   /*top: -300px;*/
    /*z-index: 100;*/
  }
 
@@ -242,3 +251,63 @@ hr {
    font-size: 9px;
    fill: black;
  }
+
+
+ #gradientbox {
+   width: 10px;
+   height: 150px;
+   position: absolute;
+   top: 68%;
+   /*left: 10%;*/
+   background: #e5b21a;
+   background: -moz-linear-gradient(top, #e5b21a 0%, #808080 97%);
+   background: -webkit-linear-gradient(top, #e5b21a 0%, #808080 97%);
+   background: linear-gradient(to bottom, #e5b21a 0%, #808080 97%);
+   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e5b21a', endColorstr='#8e8771', GradientType=0);
+   pointer-events: none;
+
+
+ }
+ #gradientlabeltop, #gradientlabelbottom {
+   color: white;
+   font-size: 14px;
+   /*position: relative;*/
+ }
+ #gradientlabeltop {
+   position: absolute;
+   top: 68%;
+   left: 4%;
+ }
+ #gradientlabelbottom {
+   position: absolute;
+   top: 87%;
+   left: 4%;
+   line-height: 90%;
+   /*top: 547px;
+ left: -639px;
+ text-align: left;
+ line-height: 90%;*/
+ }
+
+ @media (min-width: 1300px) {
+
+    #gradientbox {
+    top: 80%;
+    }
+
+   #gradientlabeltop {
+     position: absolute;
+     top: 80%;
+     left: 3%;
+   }
+   #gradientlabelbottom {
+     position: absolute;
+     top: 91%;
+     left: 3%;
+     line-height: 90%;
+     /*top: 547px;
+   left: -639px;
+   text-align: left;
+   line-height: 90%;*/
+   }
+}
