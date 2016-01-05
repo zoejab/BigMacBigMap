@@ -24,7 +24,7 @@ mongoose.connect('mongodb://localhost/BigMac', function (err) {
 });
 
 //Set up the port to listen
-app.listen(80, function () {
+app.listen(8080, function () {
   console.log('App listening on port 8080...');
 });
 
