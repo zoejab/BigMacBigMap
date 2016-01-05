@@ -47,10 +47,8 @@ $(document).ready(function() {
 	});
 
 	function populateArray() {
-		console.log('populateArray');
 		var year = $('#dropdown :selected').text();
 		if (year === "Now") {year = 2015;}
-		console.log(year);
 		$.ajax({
 			url: "/" + year,
 			method: "GET",
@@ -104,7 +102,6 @@ $(document).ready(function() {
 	};
 	var pushCurrencyName = function(data) {
 		currencyNames = data;
-		console.log(currencyNames);
 	};
 
 	getCurrencyName();
@@ -194,17 +191,14 @@ $(document).ready(function() {
 							.attr("style", "left:" + (mouse[0] + offsetL + 200) + "px;top:" + (mouse[1] + offsetT) + "px")
 							.html(function() {
 
-								// console.log(arrayChoropleth);
 								var localPrice, dollarPrice, exchangeRate, currencyName;
 								arrayChoropleth.forEach(function(country) {
 									if(country.Country === d.properties.name) {
 										localPrice = parseFloat(country.local_price).toFixed(2);
 										dollarPrice = parseFloat(country.dollar_price).toFixed(2);
 										exchangeRate = currency.rates[country.currency].toFixed(2);
-										// exchangeRate = parseFloat(country.dollar_ex).toFixed(2);
 										currencyName = currencyNames[country.currency];
 									}
-									// if (currencyNames[country.country_code] === country.countryCode
 								});
 								if ($('#dropdown :selected').text() != "Now") {
 										return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price:</strong> $" + dollarPrice;
@@ -263,9 +257,8 @@ $(document).ready(function() {
 		$('.overlay').empty();
 		var mainGraph = function() {
 			var year = $('#dropdown :selected').text();
-			console.log(year);
+
 			if (year === "Now") {year = 2015;}
-			console.log(year);
 			$.ajax({
 				url: "/" + year,
 				method: "GET",
