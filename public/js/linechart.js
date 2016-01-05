@@ -45,7 +45,6 @@ var renderLineChart = function(data) {
 
 	$('.draggable').draggable();
 
-	// var exit = $('<p>').text('X').attr('class','exit');
 	svg.append('svg:image').attr('xlink:href', '../images/remove.png').attr('class', 'exit')
 		.attr("height", '20px')
 		.attr('width', '20px')
@@ -55,7 +54,6 @@ var renderLineChart = function(data) {
 
 	$('.exit').on('click', function(e) {
 		$(e.target.parentElement.parentElement).hide();
-		// $(e.target).hide();
 	});
 
 	// Scale the range of the data
@@ -88,7 +86,6 @@ var renderLineChart = function(data) {
 		.attr("y", 0 - (margin.top / 5))
 		.attr("text-anchor", "middle")
 		.style("font-size", "14px")
-		// .style("text-decoration", "underline")
 		.text(data[0].Country + ": Historical Local Prices");
 
 	// Add the Y Axis
@@ -102,7 +99,7 @@ var renderLineChart = function(data) {
 		.style("text-anchor", "end") //anchors to a certain point
 		.text("Price (local)");
 
-	svg.selectAll("dot") // provides a suitable grouping for the svg elements that will be added
+	svg.selectAll("dot") // grabs all the circles on line chart
 		.data(data) // associates the range of data to the group of elements
 		.enter().append("circle") // adds a circle for each data point
 		.attr("r", 5)

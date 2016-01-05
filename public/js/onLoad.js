@@ -6,6 +6,7 @@ $(document).ready(function() {
 	var arrayChoropleth = [];
 	var array2015 = [];
 	var currency;
+
 	//SETS UP D3 MAP
 	d3.select(window).on("resize", throttle);
 	var zoom = d3.behavior.zoom()
@@ -107,8 +108,6 @@ $(document).ready(function() {
 	getCurrencyName();
 
 	function redraw() {
-		// width = document.getElementById('container').offsetWidth - 30;
-		// height = width / 2;
 		d3.select('.map').remove();
 		setup(width, height);
 		draw(topo);
@@ -140,7 +139,6 @@ $(document).ready(function() {
 		var country = g.selectAll(".country").data(topo);
 
 		//if country path is equal to country name from array then compare with the parseFloat.
-
 		country.enter().insert("path")
 			.attr("class", "country")
 			.attr("d", path)
@@ -200,6 +198,7 @@ $(document).ready(function() {
 										currencyName = currencyNames[country.currency];
 									}
 								});
+								//based upon drop down selection get that year's price data
 								if ($('#dropdown :selected').text() != "Now") {
 										return "<u>" + d.properties.name + "</u>" + "<br><strong> Local Price:</strong> " + localPrice + " " + currencyName + "s" + "<br> <strong>Dollar Price:</strong> $" + dollarPrice;
 								} else {

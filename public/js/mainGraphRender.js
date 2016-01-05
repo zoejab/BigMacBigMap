@@ -12,10 +12,6 @@ var renderMain = function(data) {
 		width = 400 - margin.left - margin.right,
 		height = 630 - margin.top - margin.bottom;
 
-	// var x0 = Math.max(-d3.min(data), d3.max(data));
-	// var x1 = Math.max(d3.max(data));
-
-
 	var x0 = 36;
 	var x1 = 10;
 
@@ -46,12 +42,11 @@ var renderMain = function(data) {
 		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
 		.append("g");
-	//  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
 	svg.selectAll(".bar")
 		.data(data)
 		.enter().append("rect")
-		// .attr("class", "value")
 		.attr("class", function(d) {
 			return parseFloat(d.dollar_price) - parseFloat(usa.dollar_price) < 0 ? "bar negative" : "bar positive";
 		})
