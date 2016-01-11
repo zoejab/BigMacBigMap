@@ -11,7 +11,7 @@ In equilibrium, the theory suggests that $1 of goods should get you can equivale
 
 # Approach Taken
 - used SVG world map to visually display all countries with Big Macs
-- utilized topoJSON and D3.js components to get country data and colors
+- employed topoJSON and D3.js components to get country data and colors
 - utilized D3.js with The Economist's Big Mac data to create dynamic charts for all countries in the data set
 
 
